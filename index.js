@@ -2,7 +2,8 @@ const resultBlock = document.querySelector("#result");
 const pageNumberEl = document.querySelector("#pageNubmer");
 const clickMeButton = document.querySelector("#click-Me");
 clickMeButton.addEventListener("click", () => {
-  getImages(pageNumberEl, onDataReceived);
+  const promise = getImages(pageNumberEl);
+  promise.then(onDataReceived);
 });
 function onDataReceived(data) {
   data.forEach((el) => {
