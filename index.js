@@ -1,6 +1,13 @@
 const resultBlock = document.querySelector("#result");
-const pageNumberEl = document.querySelector("#page-nubmer");
-const clickMeButton = document.querySelector("#click-me");
+const pageNumberEl = document.querySelector("#pageNubmer");
+const clickMeButton = document.querySelector("#click-Me");
 clickMeButton.addEventListener("click", () => {
-  getImages();
+  getImages(pageNumberEl, onDataReceived);
 });
+function onDataReceived(data) {
+  data.forEach((el) => {
+    const img = document.createElement("img");
+    img.src = el.thumbnail;
+    document.querySelector("body").appendChild(img);
+  });
+}

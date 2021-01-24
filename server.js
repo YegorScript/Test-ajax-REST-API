@@ -1,11 +1,8 @@
-function getImages() {
-  $.ajax(`https://repetitora.net/api/JS/Images/page=${pageNumber.value}`, {
-    success: function (data) {
-      data.forEach((el) => {
-        const img = document.createElement("img");
-        img.src = el.thumbnail;
-        document.querySelector("body").appendChild(img);
-      });
-    },
-  });
+function getImages(pageNumber, successCallback) {
+  $.ajax(
+    `https://repetitora.net/api/JS/Images?page=${pageNumberEl.value}&count=1`,
+    {
+      success: successCallback,
+    }
+  );
 }
