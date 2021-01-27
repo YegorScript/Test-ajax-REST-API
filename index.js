@@ -18,9 +18,9 @@ function onImagesReceived(data) {
   });
 }
 
-// createTasks("learn JS").then((data) => {
-//   console.log(data);
-// });
+createTasks("learn JS").then((data) => {
+  console.log(data);
+});
 
 function onTasksReceived(getTasks) {
   getTasks.forEach((tasks) => {
