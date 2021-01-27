@@ -14,3 +14,19 @@ function getImages(pageNumber) {
   });
 }
 //axios
+function getTasks() {
+  const promise = axios.get(
+    `https://repetitora.net/api/JS/Tasks?widgetId=6422`
+  );
+  return promise.then((response) => {
+    return response.data;
+  });
+}
+function createTasks(title) {
+  const promise = axios.post(
+    `https://repetitora.net/api/JS/Tasks?widgetId=6422&title=${title}`
+  );
+  return promise.then((response) => {
+    return response.data;
+  });
+}
